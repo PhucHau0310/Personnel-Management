@@ -1,0 +1,406 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>a69dfa18-359f-4473-8942-fe8c218820d6</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Emgu.CV" Version="4.10.0.5680" />
+    <PackageReference Include="Emgu.CV.runtime.debian-arm64" Version="4.10.0.5680" />
+    <PackageReference Include="Emgu.CV.runtime.ubuntu-x64" Version="4.10.0.5680" />
+    <PackageReference Include="Emgu.CV.runtime.windows" Version="4.10.0.5680" />
+    <PackageReference Include="Emgu.CV.runtime.windows.cuda" Version="4.4.0.4099" />
+    <PackageReference Include="EntityFramework" Version="6.5.1" />
+    <PackageReference Include="FirebaseAdmin" Version="3.1.0" />
+    <PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" />
+    <PackageReference Include="Libgdiplus.rntime.osx_arm64" Version="6.1.2" />
+    <PackageReference Include="MailKit" Version="4.10.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="MimeKit" Version="4.10.0" />
+    <PackageReference Include="OpenCvSharp4" Version="4.10.0.20241108" />
+    <PackageReference Include="OpenCvSharp4.Extensions" Version="4.10.0.20241108" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.10.0.20241108" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.7" />
+    <PackageReference Include="System.Drawing.Common" Version="9.0.4" />
+    <PackageReference Include="ZXing.Net" Version="0.16.10" />
+    <PackageReference Include="ZXing.Net.Bindings.ZKWeb.System.Drawing" Version="0.16.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Helper\haarcascade_frontalface_default.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\vcruntime140_1.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\vcruntime140.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_xphoto440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_xobjdetect440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_ximgproc440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_xfeatures2d440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_viz440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_videostab440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_videoio_ffmpeg440_64.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_videoio440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_video440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_tracking440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_text440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_surface_matching440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_superres440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_stitching440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_stereo440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_shape440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_saliency440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_rapid440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_quality440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_plot440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_photo440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_phase_unwrapping440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_optflow440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_objdetect440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_ml440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_intensity_transform440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_img_hash440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_imgproc440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_imgcodecs440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_highgui440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_hfs440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_fuzzy440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_freetype440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_flann440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_features2d440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_face440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_dpm440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_dnn_superres440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_dnn_objdetect440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_dnn440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_datasets440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_cudev440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_cudawarping440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_cudastereo440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_cudaoptflow440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_cudaobjdetect440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_cudalegacy440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_cudaimgproc440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_cudafilters440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_cudafeatures2d440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_cudacodec440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_cudabgsegm440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_cudaarithm440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_core440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_calib3d440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_bioinspired440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_bgsegm440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_aruco440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\opencv_alphamat440.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\msvcp140_codecvt_ids.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\msvcp140_2.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\msvcp140_1.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\msvcp140.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\harfbuzz.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\freetype.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\cvextern.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.cv.runtime.windows.cuda\4.4.0.4099\build\x64\concrt140.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.blas\11.1.218\build\x64\cublasLt64_11.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.blas\11.1.218\build\x64\cublas64_11.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.dnn.cnn\8.0.1\build\x64\cudnn_cnn_train64_8.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.dnn.cnn\8.0.1\build\x64\cudnn_cnn_infer64_8.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.dnn.ops\8.0.1\build\x64\cudnn_ops_train64_8.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.dnn.ops\8.0.1\build\x64\cudnn_ops_infer64_8.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.dnn\8.0.1\build\x64\cudnn64_8.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.fft\11.1.218\build\x64\cufftw64_10.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.fft\11.1.218\build\x64\cufft64_10.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.npp\11.1.218\build\x64\npps64_11.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.npp\11.1.218\build\x64\nppitc64_11.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.npp\11.1.218\build\x64\nppisu64_11.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.npp\11.1.218\build\x64\nppist64_11.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.npp\11.1.218\build\x64\nppim64_11.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.npp\11.1.218\build\x64\nppig64_11.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.npp\11.1.218\build\x64\nppif64_11.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.npp\11.1.218\build\x64\nppidei64_11.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.npp\11.1.218\build\x64\nppicc64_11.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.npp\11.1.218\build\x64\nppial64_11.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\NGUYEN PHUC HAU\.nuget\packages\emgu.runtime.windows.cuda.npp\11.1.218\build\x64\nppc64_11.dll" />
+  </ItemGroup>
+
+</Project>

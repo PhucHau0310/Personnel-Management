@@ -1,0 +1,38 @@
+services:
+  sqlserver:
+        container_name: sqlserver
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        environment:
+            - ACCEPT_EULA=Y
+            - MSSQL_SA_PASSWORD=Hau2004@
+        ports:
+            - '1433:1433'
+        networks:
+            - be
+        restart: always
+        volumes:
+            - sqlserver_data:/var/opt/mssql
+
+  personnelmanagement:
+        container_name: personnelmanagment
+        image: ${DOCKER_REGISTRY-}personnelmanagement
+        build:
+          context: PersonnelManagement
+          dockerfile: Dockerfile
+        ports:
+          - '3030:8080'
+          - '3031:8081'
+        networks:
+            - be
+        environment:
+          - 'DatabaseSettings__DefaultConnection=Server=sqlserver;Database=Personnel_Management;User Id=sa;Password=Hau2004@;TrustServerCertificate=true'
+        depends_on:
+            - sqlserver
+
+networks:
+    be:
+        driver: bridge
+
+volumes:
+    sqlserver_data:
+        driver: local
