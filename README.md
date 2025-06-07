@@ -41,5 +41,5 @@ run docker-compose up -d --build
 This project is licensed under the MIT License.
 
 ## 👤 Author
-- GitHub: PhucHau0310
+- GitHub: [PhucHau0310](https://github.com/PhucHau0310)
 - Email: haunhpr024@gmail.com
