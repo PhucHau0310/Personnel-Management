@@ -1,28 +1,37 @@
-📦 Quản lý nhân sự
-Ứng dụng dùng để quản lý nhân sự trong việc check in, out bằng mã QR code trong thẻ CCCD.
+🚀 Personnel Management
+Application used to manage personnel in checking in and out using QR code in CCCD card.
 
-🛠️ Các chức năng chính
-✅ Check In, Out bằng thẻ CCCD thông qua Webcam
+🛠️ Features
+✅ Check In, Out with CCCD card via Webcam
 
-✅ Quản lý tài khoản truy cập
+✅ Manage access accounts
 
-✅ Quản lý nhân viên
+✅ Manage employee
 
-📸 Ảnh minh họa
-![Trang chủ](home-page.png)
-![Trang đăng nhập](login-page.png)
+📸 Screenshots
+![Home Page](home-page.png)
+![Login Page](login-page.png)
 
-🏗️ Công nghệ sử dụng
-⚡ Ngôn ngữ: (Typscript / C#)
+🏗️ Technologies
+⚡ Programming Languages: (Typscript / C#)
 
 ⚡ Framework: (Nextjs / ASP.NET Core)
 
 ⚡ Database: (SQL SERVER)
 
-⚡ Công cụ khác: (Docker...)
+⚡ Others: (Docker...)
 
-🛠️ Cài đặt
-Clone project:
+📦 Installation & Setup
 
-bash
+``` bash
 git clone https://github.com/PhucHau0310/Personnel-Management.git
+cd root project
+run docker-compose up -d --build
+```
+
+📜 License
+This project is licensed under the MIT License.
+
+👤 Author
+- GitHub: PhucHau0310
+- Email: haunhpr024@gmail.com
